@@ -1,0 +1,19 @@
+{
+  "name": "unifier-upgrader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-ditto": "^1.2.9",
+    "json-ditto-v2": "github:BeameryHQ/json-ditto#feature/ditto.v2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "description": ""
+}
