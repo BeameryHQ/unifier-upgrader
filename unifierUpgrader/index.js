@@ -62,6 +62,10 @@ const upgradeKeyValueProperties = (obj) => {
       removeInnerReference(obj.values);
       replaceValueReference(obj.values);
     }
+  } 
+  else if (_.isObject(obj.output)) {
+    // If iterating over an object and the output is a [] or {}
+    replaceValueReference(obj);
   }
 }
 
@@ -76,44 +80,5 @@ const upgradeMappingFile = (oldMapping) => {
   // Modified in-place
   return oldMapping;
 }
-
-
-// console.log('-------------------------------');
-// const data = require('../test/data');
-// const fs = require('fs');
-// const assert = require('assert');
-// const ditto_v2 = require('json-ditto-v2');
-// let upgradedMapping = upgradeMappingFile(data.api_plugin_unifier_test.oldMapping);
-// let expectedResult = data.api_plugin_unifier_test.expectedResult;
-// let sample = data.api_plugin_unifier_test.sample;
-// // Replace just the mapping JSON from the file (keeps comments and the module.export structure)
-// var upgradedMappingString = JSON.stringify(upgradedMapping, null, 4);
-// var oldMappingFile = fs.readFileSync('/Users/nabil/Documents/GitHub/json-ditto-upgrader/test/data/oldMapping/api_plugin_unifier_test.js', 'utf8');
-// // Using regex replace to preserve file's comments
-// var upgradedMappingFileString = oldMappingFile.replace(/(module\.exports\s*=\s*)({[^]*})/, '$1' + upgradedMappingString);
-
-// fs.writeFileSync('/Users/nabil/Documents/GitHub/json-ditto-upgrader/test.js', upgradedMappingFileString, 'utf8', null);
-
-// console.log('-------------------------------');
-
-// new ditto_v2(upgradedMapping).unify(sample).then((result) => {
-
-//   var upgradedResultString = JSON.stringify(result, null, 4);
-//   fs.writeFileSync('/Users/nabil/Documents/GitHub/json-ditto-upgrader/results.js', `'use strict';\n\nmodule.exports = ${upgradedResultString}`, 'utf8', null);
-
-//   console.log(result["uniqueKeys"]);
-
-//   console.log(expectedResult["uniqueKeys"]);
-//   // for (let key in expectedResult) {
-//   //   if (key === "id" || key === "createdAt") {
-//   //     continue;
-//   //   }
-//   //   console.log(key);
-//   //   assert.deepStrictEqual(result[key], expectedResult[key]);
-//   // }
-//   // console.log(_.isEqual(result, expectedResult))
-
-// });
-
 
 module.exports = upgradeMappingFile;
