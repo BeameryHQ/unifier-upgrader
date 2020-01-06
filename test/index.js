@@ -2,6 +2,7 @@
 
 const assert = require('assert');
 const ditto_v2 = require('json-ditto-v2');
+const plugins = require('../unifierUpgrader/plugins');
 const { each } = require('lodash');
 
 let unifierUpgrader = require('../index')
@@ -16,7 +17,7 @@ describe('unifier upgrader', () => {
       let expectedResult = serviceObj.expectedResult;
 
       it(`${testService}: all fields should be identical to the expected result`, (done) => {
-        new ditto_v2(upgradedMapping).unify(sample).then((result) => {
+        new ditto_v2(upgradedMapping, plugins).unify(sample).then((result) => {
           for (let key in expectedResult) {
             if (key === "id" || key === "createdAt") {
               continue;
