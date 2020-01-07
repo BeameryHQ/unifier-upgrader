@@ -10,7 +10,7 @@ const _ = require('lodash');
  */
 function base64Encode(input) {
     if (_.isString(input) && !!input) {
-        return new Buffer(input).toString('base64')
+        return Buffer.from(input).toString('base64')
     } else return null;
 }
 

@@ -1,8 +1,8 @@
 'use strict';
 
 const URL      = require('url');
-
 const urlUtils = require('beam-uri');
+
 const BANNED_URLS = [
   "linkedin.com/profile/view",
   "linkedin.com/profile"
@@ -16,7 +16,7 @@ const BANNED_URLS = [
  */
 function cleanURI(source, service) {
 
-	if (!!source && typeof(source) == "string") {
+	if (!!source && typeof(source) === "string") {
 
     // Replace all spaces with nothing, and truncate to 400 chars,
     // or URL.parse will blow out and loop on 100% cpu :(
@@ -36,7 +36,7 @@ function cleanURI(source, service) {
       // Handle edge case where linkedin profile url is malformed
       if (BANNED_URLS.includes(source.replace(/^(https?|ftp):\/\/(www.)?/, ""))){
         source = null;
-      } 
+      }
 		}
     } finally {
         // Check if the URI is not validated and remove it !

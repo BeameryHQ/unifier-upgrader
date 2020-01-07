@@ -1,9 +1,7 @@
 'use strict';
 
-const _       = require('lodash');
 const Joi     = require('joi');
 const URL     = require('url');
-
 const urlUtils = require('beam-uri');
 
 /**

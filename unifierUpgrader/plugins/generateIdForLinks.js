@@ -1,9 +1,7 @@
 'use strict';
 
 const crypto   = require('crypto');
-const URL      = require('url');
 
-const urlUtils = require('beam-uri');
 const cleanUri = require('./cleanURI')
 /**
  * @function generateIdForLinks
