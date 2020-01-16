@@ -10,7 +10,7 @@ module.exports = {
       "7523d7416efdaca7dc1c8c0ee3b1d394": {
         "id": "7523d7416efdaca7dc1c8c0ee3b1d394",
         "type": "social",
-        "value": "https://www.linkedin.com/in/testjetase",
+        "value": "https://www.linkedin.com/in/TestjeTase",
         "service": "linkedin",
         "username": "UKJ0axFJ0n",
         "userId": "UKJ0axFJ0n",

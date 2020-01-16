@@ -10,7 +10,7 @@ module.exports = {
       "05f842512b5f48315dbef03bda8aedcd": {
         "id": "05f842512b5f48315dbef03bda8aedcd",
         "type": "social",
-        "value": "https://www.linkedin.com/in/teststu",
+        "value": "https://www.linkedin.com/in/TestsTu",
         "service": "linkedin",
         "username": "Qa3D3zIUQWkTh",
         "userId": "Qa3D3zIUQWkTh",
